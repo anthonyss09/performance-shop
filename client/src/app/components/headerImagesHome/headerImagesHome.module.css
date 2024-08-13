@@ -1,0 +1,87 @@
+.header {
+  height: 500px;
+}
+.imageContainer {
+  height: 500px;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  position: absolute;
+}
+
+.main {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.manDribblingImage {
+  z-index: 2;
+  visibility: hidden;
+  object-fit: cover;
+}
+
+.manRunnerColorImage {
+  z-index: 2;
+  visibility: hidden;
+  object-fit: cover;
+}
+
+.manRunnerDarkImage {
+  z-index: 2;
+  visibility: hidden;
+  object-fit: cover;
+}
+
+.womanRunnerImage {
+  position: absolute;
+  z-index: 3;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 700px) {
+  .header {
+    height: 550px;
+    background: white;
+    position: relative;
+    background: black;
+  }
+
+  /* .imageContainer {
+    height: 50%;
+    position: absolute;
+  } */
+  .manDribblingContainer {
+    height: 250px;
+    width: 30%;
+    bottom: 0;
+    left: 0;
+  }
+  .manDribblingImage {
+    visibility: visible;
+  }
+  .manRunnerColorContainer {
+    height: 300px;
+    width: 35%;
+    top: 0;
+    left: 0;
+  }
+  .manRunnerColorImage {
+    visibility: visible;
+  }
+  .manRunnerDarkContainer {
+    height: 222px;
+    width: 30%;
+    top: 0;
+    left: 35%;
+  }
+  .manRunnerDarkImage {
+    visibility: visible;
+  }
+  .womanRunnerContainer {
+    height: 300px;
+    width: 35%;
+    top: 0;
+    right: 0;
+    z-index: 7;
+  }
+}

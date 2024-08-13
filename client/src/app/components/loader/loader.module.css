@@ -1,0 +1,10 @@
+.main {
+  height: 80vh;
+  background: black;
+  display: grid;
+  place-items: center;
+}
+
+.main p {
+  color: white;
+}

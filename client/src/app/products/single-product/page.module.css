@@ -1,0 +1,167 @@
+.btn {
+  min-height: 40px;
+  min-width: 140px;
+  color: rgb(252, 252, 252, 0.9);
+  border: 2px solid rgb(252, 252, 252, 0.4);
+  border-radius: 60px;
+  font-size: 11px;
+  background: rgb(0, 0, 0, 0.5);
+  padding: 0.4rem 0.8rem;
+  color: rgb(247, 232, 234);
+}
+
+.btnAdd {
+  width: 300px;
+  margin-top: 1rem;
+  border: 2px solid rgb(252, 252, 252, 0.6);
+  letter-spacing: 0.05rem;
+  font-size: 14px;
+  color: white;
+}
+
+.btnAdd:hover {
+  background: white;
+  color: black;
+}
+
+.imageContainer {
+  height: 40vh;
+  width: 100vw;
+  /* max-width: 500px; */
+  object-fit: cover;
+  position: relative;
+}
+
+.header {
+  height: 60px;
+  background: rgb(252, 252, 252, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  padding-left: 2rem;
+  background: rgb(252, 252, 252, 0.1);
+}
+
+.header p {
+  font-size: 12px;
+  color: rgb(194, 228, 239);
+}
+
+.main {
+  min-height: 76vh;
+  width: 100vw;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main p {
+  color: white;
+}
+
+.options {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  grid-gap: 15px;
+  /* margin: 0 auto; */
+}
+
+.optionsContainer {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.optionsContainer p {
+  width: 300px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: rgb(252, 252, 252, 0.9);
+  color: rgb(247, 232, 234);
+  letter-spacing: 0.02rem;
+}
+
+.page {
+  padding-top: 80px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.page h1 {
+  color: white;
+  font-size: 18px;
+}
+
+.title {
+  width: 300px;
+  position: absolute;
+  z-index: 10;
+  top: 2rem;
+  left: 2rem;
+  right: 0;
+}
+
+.titleP {
+  font-size: 18px;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgb(252, 252, 252, 0.7);
+  letter-spacing: 0.02rem;
+}
+
+.spacer {
+  width: 100vw;
+  height: 6px;
+  background: rgb(252, 252, 252, 0.8);
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 500px) {
+  .imageContainer {
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .imageContainer {
+    height: 86vh;
+    height: 76vh;
+    max-width: 800px;
+    position: absolute;
+    right: -3rem;
+  }
+
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .optionsContainer {
+    position: absolute;
+    left: 0;
+    top: 5rem;
+  }
+  .title {
+    left: 2rem;
+    top: 2rem;
+    /* left: 10rem; */
+    /* left: 35vw; */
+  }
+
+  .title p {
+    font-size: 24px;
+  }
+  .spacer {
+    height: 0;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+}

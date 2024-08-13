@@ -1,0 +1,110 @@
+.header h1 {
+  height: 60px;
+  display: grid;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  color: rgb(252, 252, 252, 0.9);
+  background: rgb(252, 252, 252, 0.1);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.imageContainer {
+  /* height: 300px; */
+  height: 40vh;
+  width: 100vw;
+  position: relative;
+}
+
+.imageContainerLarge {
+  height: 60vh;
+  width: 100vw;
+  position: relative;
+}
+
+.imageContainerSmall {
+  height: 100px;
+  width: 200px;
+  position: relative;
+  position: absolute;
+  right: 0;
+  /* bottom: 2rem; */
+}
+
+.main {
+  background: black;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main p {
+  color: white;
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: 0.02rem;
+  line-height: 24px;
+  padding: 0 2rem;
+}
+
+.page {
+  background: black;
+  padding-top: 96px;
+}
+
+.sectionColumn {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.sectionColumnP {
+  margin-bottom: 4rem;
+}
+
+.sectionColumnPFirst {
+  margin-bottom: -3rem;
+  z-index: 200;
+}
+
+.sectionRow {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.sectionRow p {
+  width: 50vw;
+  z-index: 3;
+}
+
+@media only screen and (min-width: 500px) {
+  .imageContainer {
+    height: 60vh;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .imageContainer {
+    max-width: 800px;
+    height: 80vh;
+  }
+  .imageContainerLarge {
+    height: 90vh;
+  }
+  .sectionColumn {
+    max-width: 800px;
+  }
+}

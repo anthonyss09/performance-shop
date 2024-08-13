@@ -1,0 +1,48 @@
+.main {
+  min-height: 80vh;
+  padding: 1rem;
+  padding-top: 126px;
+  background: rgb(252, 252, 252, 0.6);
+  background-image: url(../../../public//assets/images/womanRunner.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  background: rgb(220, 220, 220);
+  padding: 1rem;
+  border-radius: 0.4rem;
+  letter-spacing: 0.02rem;
+}
+
+.main section {
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  padding: 0 1rem;
+}
+
+.sectionParagraph {
+  font-size: 14px;
+  color: rgb(120, 120, 120);
+  color: rgb(90, 90, 90);
+  color: black;
+  letter-spacing: 0.02rem;
+  background: rgb(194, 228, 239, 0.6);
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.spacer {
+  height: 20px;
+  width: 100%;
+  background: rgb(220, 220, 220);
+  border-radius: 0.4rem;
+}
