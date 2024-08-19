@@ -47,7 +47,7 @@ export default function AboutPage() {
         </section>
         <section className={styles.sectionColumn}>
           <p className={styles.sectionColumnP}>
-            You’d need your product tested by top level athletes that were
+            You&apos;d need your product tested by top level athletes that were
             willing to push the sneaker as hard as they push themselves.
           </p>
           <div className={styles.imageContainer}>
@@ -63,7 +63,7 @@ export default function AboutPage() {
         </section>
 
         <section className={styles.sectionRow}>
-          <p>If successfull you'd have the performance generation 1.</p>
+          <p>If successfull you&apos;d have the performance generation 1.</p>
 
           <div className={styles.imageContainerSmall}>
             {" "}

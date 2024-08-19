@@ -104,7 +104,7 @@ export default function Navbar() {
   }
 
   return (
-    <>
+    <div>
       {" "}
       <LoginForm
         showAuthForm={showAuthForm}
@@ -134,6 +134,6 @@ export default function Navbar() {
           closeMenu={closeMenu}
         />
       )}
-    </>
+    </div>
   );
 }

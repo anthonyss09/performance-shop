@@ -1,10 +1,30 @@
 .main {
-  height: 80vh;
-  background: black;
+  height: 100vh;
+  width: 100vw;
+  background: none;
   display: grid;
   place-items: center;
+  position: fixed;
+  z-index: 250;
+  top: 0;
+  left: 0;
+}
+
+.main div {
+  /* padding: 1rem 2rem;
+  background: white;
+  border: 2px solid black; */
+
+  background: white;
+  min-height: 60px;
+  min-width: 200px;
+  padding: 1rem 2rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid lightGrey;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
 }
 
 .main p {
-  color: white;
+  color: black;
 }

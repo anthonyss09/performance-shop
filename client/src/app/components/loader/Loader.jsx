@@ -1,9 +1,12 @@
 import styles from "./loader.module.css";
 
-export default function Loader() {
+export default function Loader({ loadingMessage }) {
   return (
     <aside className={styles.main}>
-      <p>loading...</p>
+      <div>
+        {" "}
+        <p>{loadingMessage}</p>
+      </div>
     </aside>
   );
 }
