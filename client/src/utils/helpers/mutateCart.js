@@ -94,7 +94,7 @@ export default async function mutateCart({
         variantTitle,
         productImageUrl,
       });
-      let userErrorMessage = res.data.cartLinesUpdate.userErrors[0]
+      let userErrorMessage = res.data.cartLinesAdd.userErrors[0]
         ? res.data.cartLinesAdd.userErrors[0].message
         : undefined;
       if (userErrorMessage) {

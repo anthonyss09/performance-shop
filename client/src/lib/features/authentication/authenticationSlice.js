@@ -70,6 +70,7 @@ const extendeApi = apiSlice.injectEndpoints({
   }
 }`,
       }),
+
       async onQueryStarted(
         { email, password },
         { dispatch, queryFulfilled, getState }
@@ -82,6 +83,7 @@ const extendeApi = apiSlice.injectEndpoints({
           console.log("the proper response is", cat);
           if (cat !== null) {
             dispatch(setCustomerAccessToken(cat.accessToken));
+
             console.log("set cat", cat);
             localStorage.setItem(
               "performanceCustomerAccessToken",

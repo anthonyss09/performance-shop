@@ -1,4 +1,4 @@
-export default function FormRow({ label, id, onChange }) {
+export default function FormRow({ label, id, onChange, value }) {
   return (
     <div className="form-row" role="div">
       <label className="form-label" role="label">
@@ -10,6 +10,7 @@ export default function FormRow({ label, id, onChange }) {
         id={id}
         onChange={onChange}
         role="input"
+        value={value}
       />
     </div>
   );

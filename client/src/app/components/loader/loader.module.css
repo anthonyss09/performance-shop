@@ -5,7 +5,7 @@
   display: grid;
   place-items: center;
   position: fixed;
-  z-index: 250;
+  z-index: 550;
   top: 0;
   left: 0;
 }
