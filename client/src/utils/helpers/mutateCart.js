@@ -57,6 +57,7 @@ export default async function mutateCart({
           callAlert({ alertMessage: "Item added to cart!", dispatch });
         }
       } catch (error) {
+        console.log("error", error);
         callAlert({ alertMessage: "Something went wrong.", dispatch });
       }
     } else {
@@ -71,7 +72,7 @@ export default async function mutateCart({
           merchandiseId,
         });
 
-        let userErrorMessage = res.data.cartLinesUpdate.userErrors[0]
+        let userErrorMessage = res.data.cartLinesAdd.userErrors[0]
           ? res.data.cartLinesUpdate.userErrors[0].message
           : undefined;
         if (userErrorMessage) {
@@ -80,6 +81,8 @@ export default async function mutateCart({
           callAlert({ alertMessage: "Item added to cart!", dispatch });
         }
       } catch (error) {
+        console.log("error", error);
+
         callAlert({ alertMessage: "Something went wrong.", dispatch });
       }
     }
@@ -92,7 +95,7 @@ export default async function mutateCart({
         productImageUrl,
       });
       let userErrorMessage = res.data.cartLinesUpdate.userErrors[0]
-        ? res.data.cartLinesUpdate.userErrors[0].message
+        ? res.data.cartLinesAdd.userErrors[0].message
         : undefined;
       if (userErrorMessage) {
         callAlert({ alertMessage: userErrorMessage, dispatch });
@@ -100,6 +103,8 @@ export default async function mutateCart({
         callAlert({ alertMessage: "Item added to cart!", dispatch });
       }
     } catch (error) {
+      console.log("error", error);
+
       callAlert({ alertMessage: "Something went wrong.", dispatch });
     }
   }

@@ -38,8 +38,10 @@ export default function SingleProductPage() {
       : null;
   }, []);
 
+  let btnActive;
+
   const handleClick = (e) => {
-    let btnActive = document.getElementById(btnActiveId.current);
+    btnActive = document.getElementById(btnActiveId.current);
     if (btnActive) {
       btnActive.style.color = "rgb(247, 232, 234)";
       btnActive.style.background = "none";
@@ -107,6 +109,8 @@ export default function SingleProductPage() {
                 dispatch,
               });
               variantIndex.current = null;
+              btnActive.style.color = "rgb(247, 232, 234)";
+              btnActive.style.background = "none";
             }}
           >
             Add to cart
