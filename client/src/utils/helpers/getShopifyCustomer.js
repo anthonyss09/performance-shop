@@ -1,4 +1,4 @@
-export default async function loginShopifyCustomer(customerAccessToken) {
+export default async function getShopifyCustomer(customerAccessToken) {
   // console.log("were using", customerAccessToken);
   try {
     const { data } = await fetch(

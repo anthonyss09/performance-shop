@@ -57,11 +57,13 @@ export default function Login({ showAuthForm, closeAuthForm }) {
       email,
       password,
       isLogin,
+      firstName,
       setEmail,
       setPassword,
       registerCustomer,
       createCustomerToken,
       setLoading,
+      setFirstName,
     });
   };
   return (

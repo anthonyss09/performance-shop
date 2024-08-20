@@ -1,6 +1,6 @@
 import isEmail from "../helpers/isEmail";
 import { createRedisCustomer, getRedisCustomer } from "../../services/redis";
-import loginShopifyCustomer from "../helpers/login";
+import getShopifyCustomer from "../helpers/getShopifyCustomer";
 import { setCartId } from "@/lib/features/cart/cartSlice";
 
 export default async function handleLogin({
@@ -16,6 +16,8 @@ export default async function handleLogin({
   createCustomerToken,
   setLoading,
   isLogin,
+  setFirstName,
+  firstName,
 }) {
   setLoading(true);
   if (!isEmail(email)) {
@@ -31,7 +33,6 @@ export default async function handleLogin({
     try {
       const newCustomer = await registerCustomer({
         firstName: firstName,
-        lastName: lastName,
         email: email,
         password: password,
       });
@@ -44,9 +45,13 @@ export default async function handleLogin({
         customerId,
         cartId: "gid://shopify/Cart/null",
       });
+      localStorage.setItem("performanceCartId", "gid://shopify/Cart/null");
+      dispatch(setCartId("gid://shopify/Cart/null"));
 
       dispatch(displayAlert({ alertMessage: "Welcome to the club!" }));
       setEmail("");
+      setFirstName("");
+
       closeAuthForm();
     } catch (error) {
       dispatch(displayAlert({ alertMessage: "Something went wrong." }));
@@ -59,10 +64,8 @@ export default async function handleLogin({
         password: password,
       });
       const customerAccessTokenData = response.data.customerAccessTokenCreate;
-      console.log(customerAccessTokenData);
 
       if (customerAccessTokenData.customerAccessToken === null) {
-        //link to register or show register form
         setLoading(false);
         dispatch(displayAlert({ alertMessage: "Invalid credentials." }));
         setPassword("");
@@ -71,11 +74,15 @@ export default async function handleLogin({
         }, 3000);
         return;
       }
-      const shopifyData = await loginShopifyCustomer(
+      const shopifyData = await getShopifyCustomer(
         customerAccessTokenData.customerAccessToken.accessToken
       );
 
       const redisCustomer = await getRedisCustomer(shopifyData.customer.id);
+      localStorage.setItem(
+        "performanceCartId",
+        JSON.stringify(redisCustomer.cartId)
+      );
       dispatch(setCartId(redisCustomer.cartId));
       dispatch(displayAlert({ alertMessage: "Welcome back!" }));
       setEmail("");

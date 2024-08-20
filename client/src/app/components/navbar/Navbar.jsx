@@ -10,7 +10,7 @@ import {
   useLoginCustomerQuery,
 } from "../../../lib/features/authentication/authenticationSlice";
 import { getRedisCustomer } from "../../../services/redis";
-import loginShopifyCustomer from "../../../utils/helpers/login";
+// import loginShopifyCustomer from "../../../utils/helpers/login";
 import { useState } from "react";
 import Alert from "../Alert";
 import { selectAlertsData } from "../../../lib/features/alerts/alertsSlice";
@@ -64,15 +64,14 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    async function getRedisData() {
-      const res = await loginShopifyCustomer(customerAccessToken);
-      if (res.customer !== null) {
-        const redisCustomer = await getRedisCustomer(res.customer.id);
-        // console.log("the redis customer is", redisCustomer);
-        dispatch(setCartId(redisCustomer.cartId));
-      }
-    }
-    getRedisData();
+    // async function getRedisData() {
+    //   const res = await loginShopifyCustomer(customerAccessToken);
+    //   if (res.customer !== null) {
+    //     const redisCustomer = await getRedisCustomer(res.customer.id);
+    //     dispatch(setCartId(redisCustomer.cartId));
+    //   }
+    // }
+    // getRedisData();
 
     window.addEventListener("resize", resizeCB);
     return () => {

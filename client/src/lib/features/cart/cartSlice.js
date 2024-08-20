@@ -1,18 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { apiSlice } from "../api/apiSlice";
-import { createRedisCustomer } from "../../../services/redis";
+import { createRedisCustomer, getRedisCustomer } from "../../../services/redis";
+import getShopifyCustomer from "@/utils/helpers/getShopifyCustomer";
 
-let cartId;
+var cartId;
 var customerAccessToken;
 
-if (typeof localStorage !== "undefined") {
-  cartId = localStorage.getItem("performanceCartId")
-    ? JSON.parse(localStorage.getItem("performanceCartId"))
-    : "gid://shopify/Cart/null";
+async function getCustomerData() {
+  const shopifyData = await getShopifyCustomer(customerAccessToken);
+  const redisCustomer = await getRedisCustomer(shopifyData.customer.id);
+  cartId = redisCustomer.cartId;
+  localStorage.setItem("performanceCartId", JSON.stringify(cartId));
+  return cartId;
+}
 
+if (typeof localStorage !== "undefined") {
   customerAccessToken = localStorage.getItem("performanceCustomerAccessToken")
     ? JSON.parse(localStorage.getItem("performanceCustomerAccessToken"))
     : null;
+
+  if (customerAccessToken) {
+    getCustomerData();
+  }
+  cartId = localStorage.getItem("performanceCartId")
+    ? JSON.parse(localStorage.getItem("performanceCartId"))
+    : "gid://shopify/Cart/null";
 } else {
   cartId = "gid://shopify/Cart/null";
   customerAccessToken = null;
@@ -189,6 +201,9 @@ const extendedApi = apiSlice.injectEndpoints({
             });
             dispatch(setCartCount(cartCount));
           } else if (cartData.cart === null) {
+            console.log("cartdata.cart", cartData.cart);
+            dispatch(setCartData(cartData.cart));
+            dispatch(setCartCount(0));
             // localStorage.removeItem("performanceCartId");
           }
         } catch (error) {

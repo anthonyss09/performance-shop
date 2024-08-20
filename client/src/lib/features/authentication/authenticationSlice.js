@@ -1,5 +1,6 @@
 import { apiSlice } from "../api/apiSlice";
 import { createSlice } from "@reduxjs/toolkit";
+import { getRedisCustomer } from "@/services/redis";
 
 let customerAccessToken;
 if (typeof localStorage !== "undefined") {
@@ -36,6 +37,7 @@ const extendeApi = apiSlice.injectEndpoints({
   }
 }`,
       }),
+      invalidatesTags: ["Customer", "Cart"],
     }),
 
     customerUpdate: build.mutation({
@@ -89,13 +91,13 @@ const extendeApi = apiSlice.injectEndpoints({
               "performanceCustomerAccessToken",
               JSON.stringify(cat.accessToken)
             );
-            localStorage.removeItem("performanceCartId");
+            // localStorage.removeItem("performanceCartId");
           }
         } catch (error) {
           console.log("some error occured creating access token", error);
         }
       },
-      invalidatesTags: ["Customer", "Cart"],
+      invalidatesTags: ["Customer"],
     }),
 
     loginCustomer: build.query({
@@ -119,12 +121,18 @@ const extendeApi = apiSlice.injectEndpoints({
           const { data: authData } = await queryFulfilled;
           if (authData.customer !== null) {
             dispatch(setCustomerData(authData.customer));
+            const redisCustomer = await getRedisCustomer(authData.customer.id);
+            localStorage.setItem(
+              "performanceCartId",
+              JSON.stringify(redisCustomer.cartId)
+            );
           } else if (authData.customer === null) {
             localStorage.remove("performanceCustomerAccessToken");
           }
         } catch (error) {}
       },
       providesTags: ["Customer"],
+      invalidatesTags: ["Cart"],
     }),
   }),
 });
