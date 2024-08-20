@@ -24,11 +24,7 @@ export default function DarkNavWrapper({
       />
       <ul className={styles.links}>
         <li className={styles.listItem} onClick={closeAuthForm}>
-          <Link
-            href="/"
-            className={`link ${styles.link} ${styles.linkWhite}`}
-            role="navbar-dark-link-home"
-          >
+          <Link href="/" className={`link ${styles.link} ${styles.linkWhite}`}>
             Home
           </Link>
         </li>
@@ -37,7 +33,6 @@ export default function DarkNavWrapper({
           <Link
             href="/products/single-product"
             className={`link ${styles.link} ${styles.linkWhite}`}
-            role="navbar-dark-link-shop"
           >
             Shop
           </Link>
@@ -46,7 +41,6 @@ export default function DarkNavWrapper({
           <Link
             href="/about"
             className={`link ${styles.link} ${styles.linkWhite}`}
-            role="navbar-dark-link-about"
           >
             About
           </Link>
@@ -63,14 +57,13 @@ export default function DarkNavWrapper({
             priority={true}
             width={20}
             height={20}
-            role="navbar-dark-user-icon"
           />
         </button>
         <div
           id="cart-count"
           className={`${styles.cartCount} ${styles.cartCount}`}
         >
-          <p role="navbar-dark-cart-count"> {cartCount}</p>
+          <p> {cartCount}</p>
         </div>
 
         <Link href="/cart" onClick={closeAuthForm}>
@@ -82,7 +75,6 @@ export default function DarkNavWrapper({
             priority={true}
             width={20}
             height={20}
-            role="navbar-dark-cart-icon"
           />
         </Link>
         <button
@@ -101,7 +93,6 @@ export default function DarkNavWrapper({
             height={32}
             width={32}
             className={`${styles.menuBars} ${styles.menuBarsWhite}`}
-            role="navbar-dark-bars"
           />
         </button>
       </span>

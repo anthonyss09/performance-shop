@@ -70,7 +70,6 @@ export default function SingleProductPage() {
           className={`btn ${styles.btn}`}
           key={index}
           onClick={handleClick}
-          role="single-product-btn"
         >
           {edge.node.title}
         </button>
@@ -123,15 +122,10 @@ export default function SingleProductPage() {
     <div className={styles.page}>
       {" "}
       <header className={styles.header}>
-        <h1 role="single-product-h1">Shop Performance</h1>
-        <p role="single-product-header-p">
-          Join the club for exclusive benefits!
-        </p>
+        <h1>Shop Performance</h1>
+        <p>Join the club for exclusive benefits!</p>
       </header>
-      <main className={styles.main} role="single-product-main">
-        {" "}
-        {content}
-      </main>
+      <main className={styles.main}> {content}</main>
     </div>
   );
 }

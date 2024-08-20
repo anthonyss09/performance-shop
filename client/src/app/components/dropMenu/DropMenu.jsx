@@ -6,19 +6,10 @@ import chevronRight from "../../assets/svgs/chevronRight.svg";
 
 export default function DropMenu({ showMenu, handleMenuClick }) {
   return (
-    <div
-      className={`${styles.main} ${showMenu ? styles.visible : ""}`}
-      role="drop-menu-main"
-    >
-      <div className={styles.header} role="drop-menu-header">
+    <div className={`${styles.main} ${showMenu ? styles.visible : ""}`}>
+      <div className={styles.header}>
         <button className={styles.btn} onClick={handleMenuClick}>
-          <Image
-            src={chevronRight}
-            alt="close arrow"
-            role="drop-menu-chevron"
-            height={30}
-            width={30}
-          />
+          <Image src={chevronRight} alt="close arrow" height={30} width={30} />
         </button>
       </div>
 
@@ -28,7 +19,6 @@ export default function DropMenu({ showMenu, handleMenuClick }) {
             href="/"
             className={`link ${styles.link}`}
             onClick={handleMenuClick}
-            role="drop-menu-link-home"
           >
             Home
           </Link>

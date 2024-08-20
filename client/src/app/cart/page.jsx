@@ -38,7 +38,7 @@ export default function CartPage() {
   };
 
   const itemList = (
-    <ul className={styles.cartItemsList} role="cart-item-list">
+    <ul className={styles.cartItemsList}>
       {lines ? (
         lines.edges.map((edge, index) => (
           <li key={index}>
@@ -70,18 +70,15 @@ export default function CartPage() {
             alt="product preview"
             fill
             className={styles.manRunnerImage}
-            role="cart-background-image"
           />
         </div>
         <h1>Cart Summary</h1>
       </header>
-      <main className={styles.main} role="cart-main">
+      <main className={styles.main}>
         <div>
-          <header className={styles.subHeader} role="cart-header">
-            <h2 className={styles.title} role="cart-h2">
-              Your Cart
-            </h2>
-            <p role="cart-header-p">Items {cart.cartCount} / Subtotal $189</p>
+          <header className={styles.subHeader}>
+            <h2 className={styles.title}>Your Cart</h2>
+            <p>Items {cart.cartCount} / Subtotal $189</p>
           </header>
           {itemList}
         </div>
@@ -91,36 +88,24 @@ export default function CartPage() {
             <h3>Order Summary</h3>
             <span>
               <p>SubTotal</p>
-              <p className={styles.amount} role="cart-subtotal">
-                $189
-              </p>
+              <p className={styles.amount}>$189</p>
             </span>
             <span>
               <p>Sales Tax</p>
-              <p className={styles.amount} role="cart-tax">
-                $20
-              </p>
+              <p className={styles.amount}>$20</p>
             </span>
             <span>
               <p>Delivery</p>
-              <p className={styles.amount} role="cart-delivery">
-                Free
-              </p>
+              <p className={styles.amount}>Free</p>
             </span>
             <span className={styles.total}>
               <p>Total</p>
-              <p className={styles.amount} role="cart-total">
-                $209
-              </p>
+              <p className={styles.amount}>$209</p>
             </span>
           </div>
           <footer className={styles.footer}>
             {" "}
-            <button
-              className={`btn ${styles.btn}`}
-              onClick={hanldeCheckout}
-              role="cart-btn"
-            >
+            <button className={`btn ${styles.btn}`} onClick={hanldeCheckout}>
               Checkout
             </button>
           </footer>

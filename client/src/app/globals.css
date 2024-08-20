@@ -304,8 +304,8 @@ button:hover {
   font-family: "Kolker Brush", cursive;
   font-weight: 300;
   font-size: 30px;
-  color: black;
-  color: rgb(190, 190, 190);
+  /* color: rgb(190, 190, 190); */
+  color: rgb(120, 120, 120);
 }
 
 .logo-text-white {

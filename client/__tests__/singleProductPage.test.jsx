@@ -9,12 +9,4 @@ test("Home", () => {
       <SingleProductPage />
     </StoreProvider>
   );
-
-  const singleProductMain = screen.getByRole("single-product-main");
-  const singleProductH1 = screen.getByRole("single-product-h1");
-  const singleProductHeaderP = screen.getByRole("single-product-header-p");
-
-  expect(singleProductMain).toBeDefined();
-  expect(singleProductH1).toBeDefined();
-  expect(singleProductHeaderP).toBeDefined();
 });

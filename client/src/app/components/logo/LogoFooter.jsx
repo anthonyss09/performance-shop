@@ -14,11 +14,8 @@ export default function LogoFooter() {
         width={28}
         height={32}
         className="performance-icon-black logo-icon"
-        role="logo-performance-icon"
       />
-      <h3 className="logo-text logo-footer-text" role="logo-text">
-        Performance
-      </h3>
+      <p className="logo-text logo-footer-text">Performance</p>
     </Link>
   );
 }

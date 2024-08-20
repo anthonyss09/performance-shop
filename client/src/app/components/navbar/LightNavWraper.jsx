@@ -26,11 +26,7 @@ export default function LightNavWrapper({
 
       <ul className={styles.links}>
         <li className={styles.listItem} onClick={closeAuthForm}>
-          <Link
-            href="/"
-            className={`link ${styles.link}`}
-            role="navbar-light-link-home"
-          >
+          <Link href="/" className={`link ${styles.link}`}>
             Home
           </Link>
         </li>
@@ -39,18 +35,13 @@ export default function LightNavWrapper({
           <Link
             href="/products/single-product"
             className={`link ${styles.link}`}
-            role="navbar-light-link-shop"
           >
             Shop
           </Link>
         </li>
 
         <li className={styles.listItem} onClick={closeAuthForm}>
-          <Link
-            href="/about"
-            className={`link ${styles.link}`}
-            role="navbar-light-link-about"
-          >
+          <Link href="/about" className={`link ${styles.link}`}>
             About
           </Link>
         </li>
@@ -65,11 +56,10 @@ export default function LightNavWrapper({
             priority={true}
             width={20}
             height={20}
-            role="navbar-light-user-icon"
           />
         </button>
         <div id="cart-count" className={`${styles.cartCount} $`}>
-          <p role="navbar-light-cart-count"> {cartCount}</p>
+          <p> {cartCount}</p>
         </div>
 
         <Link href="/cart" onClick={closeAuthForm}>
@@ -81,7 +71,6 @@ export default function LightNavWrapper({
             priority={true}
             width={20}
             height={20}
-            role="navbar-light-cart-icon"
           />
         </Link>
         <button
@@ -100,7 +89,6 @@ export default function LightNavWrapper({
             height={32}
             width={32}
             className={styles.menuBars}
-            role="navbar-light-bars"
           />
         </button>
       </span>

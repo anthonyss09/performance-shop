@@ -25,7 +25,7 @@
 }
 
 .imageContainer {
-  height: 40vh;
+  min-height: 274.66px;
   width: 100vw;
   /* max-width: 500px; */
   object-fit: cover;
@@ -127,14 +127,13 @@
 
 @media only screen and (min-width: 500px) {
   .imageContainer {
-    height: 60vh;
+    min-height: 333px;
   }
 }
 
 @media only screen and (min-width: 700px) {
   .imageContainer {
-    height: 86vh;
-    height: 76vh;
+    min-height: 540px;
     max-width: 800px;
     position: absolute;
     right: -3rem;

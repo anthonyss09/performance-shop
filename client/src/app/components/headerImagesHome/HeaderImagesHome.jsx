@@ -55,7 +55,6 @@ const HeaderImagesHome = React.memo(function HeaderImagesHome() {
           fill
           className={`${styles.womanRunnerImage} ${styles.headerImage}`}
           id="homepage-woman-runner-image"
-          role="header-images-woman-runner"
         />
       </div>
       <div
@@ -69,7 +68,6 @@ const HeaderImagesHome = React.memo(function HeaderImagesHome() {
           fill
           className={`${styles.headerImage} ${styles.manDribblingImage}`}
           id="homepage-man-dribbling-image"
-          role="header-images-man-dribbling"
         />
       </div>
       <div
@@ -83,7 +81,6 @@ const HeaderImagesHome = React.memo(function HeaderImagesHome() {
           fill
           className={`${styles.headerImage} ${styles.manRunnerColorImage}`}
           id="homepage-man-runner-color-image"
-          role="header-images-man-runner-color"
         />
       </div>
       <div
@@ -96,7 +93,6 @@ const HeaderImagesHome = React.memo(function HeaderImagesHome() {
           fill
           className={`${styles.headerImage} ${styles.manRunnerDarkImage}`}
           id="homepage-man-runner-dark-image"
-          role="header-images-man-runner-dark"
         />
       </div>
     </header>

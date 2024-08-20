@@ -15,13 +15,13 @@
 
 .imageContainer {
   /* height: 300px; */
-  height: 40vh;
+  min-height: 400px;
   width: 100vw;
   position: relative;
 }
 
 .imageContainerLarge {
-  height: 60vh;
+  min-height: 400px;
   width: 100vw;
   position: relative;
 }

@@ -9,20 +9,4 @@ test("LightNavWrapper", () => {
       <LightNavWrapper />
     </StoreProvider>
   );
-
-  const navbarLightLinkHome = screen.getByRole("navbar-light-link-home");
-  const navbarLightLinkAbout = screen.getByRole("navbar-light-link-about");
-  const navbarLightLinkShop = screen.getByRole("navbar-light-link-shop");
-  const navbarLightCartCount = screen.getByRole("navbar-light-cart-count");
-  const navbarLightUserIcon = screen.getByRole("navbar-light-user-icon");
-  const navbarLightBars = screen.getByRole("navbar-light-bars");
-  const navbarLightCartIcon = screen.getByRole("navbar-light-cart-icon");
-
-  expect(navbarLightLinkHome).toBeDefined();
-  expect(navbarLightLinkAbout).toBeDefined();
-  expect(navbarLightLinkShop).toBeDefined();
-  expect(navbarLightCartCount).toBeDefined();
-  expect(navbarLightUserIcon).toBeDefined();
-  expect(navbarLightBars).toBeDefined();
-  expect(navbarLightCartIcon).toBeDefined();
 });

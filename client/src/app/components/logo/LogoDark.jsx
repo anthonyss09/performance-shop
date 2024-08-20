@@ -23,12 +23,11 @@ export default function LogoDark({ shiftRight, closeMenu, closeAuthForm }) {
           priority={true}
           fill
           className="logo-icon"
-          role="logo-performance-icon"
         />
       </div>
-      <h3 id="logo-text" className="logo-text logo-nav-text" role="logo-text">
+      <p id="logo-text" className="logo-text logo-nav-text">
         Performance
-      </h3>
+      </p>
     </Link>
   );
 }

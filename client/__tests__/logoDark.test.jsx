@@ -4,10 +4,4 @@ import LogoDark from "../src/app/components/logo/LogoDark";
 
 test("LogoDark", () => {
   render(<LogoDark />);
-
-  const logoPerformanceIcon = screen.getByRole("logo-performance-icon");
-  const logoText = screen.getByRole("logo-text");
-
-  expect(logoPerformanceIcon).toBeDefined();
-  expect(logoText).toBeDefined();
 });

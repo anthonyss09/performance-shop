@@ -38,10 +38,10 @@ export default function Footer() {
             Contact
           </Link>
         </li>
-        <div className="footer-logo-container">
+        <li className="footer-logo-container">
           {" "}
           <LogoFooter />
-        </div>
+        </li>
       </ul>
     </footer>
   );

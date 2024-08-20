@@ -50,8 +50,8 @@ export default function CartRow({
               priority={true}
               src={chevronDown}
               alt="product preview"
-              width={15}
-              height={15}
+              width={20}
+              height={20}
             />
           </button>
           <button
@@ -78,8 +78,8 @@ export default function CartRow({
               priority={true}
               src={chevronUp}
               alt="product preview"
-              width={15}
-              height={15}
+              width={20}
+              height={20}
             />
           </button>
 

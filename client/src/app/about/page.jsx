@@ -25,7 +25,6 @@ export default function AboutPage() {
               priority
               className={styles.image}
               alt="sneaker"
-              role="about-image-sneaker"
             />
           </div>
         </section>
@@ -41,7 +40,6 @@ export default function AboutPage() {
               priority
               className={styles.image}
               alt="man runner dark"
-              role="about-image-man-runner-dark"
             />
           </div>
         </section>
@@ -57,7 +55,6 @@ export default function AboutPage() {
               priority
               className={styles.image}
               alt="man dribbling"
-              role="about-image-man-dribbling"
             />
           </div>
         </section>
@@ -73,7 +70,6 @@ export default function AboutPage() {
               priority
               className={styles.image}
               alt="sneaker"
-              role="about-image-sneaker-small"
             />
           </div>
         </section>
@@ -86,7 +82,6 @@ export default function AboutPage() {
               priority
               className={styles.image}
               alt="woman runner"
-              role="about-image-woman-runner"
             />
           </div>
         </section>

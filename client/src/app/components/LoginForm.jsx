@@ -73,20 +73,13 @@ export default function Login({ showAuthForm, closeAuthForm }) {
       <form
         className={`form ${showAuthForm ? "form-visible" : ""}`}
         onSubmit={handleFormSubmit}
-        role="login-form-main"
       >
         <button
           className="btn btn-form-chevron"
           type="button"
           onClick={closeAuthForm}
         >
-          <Image
-            src={chevronRight}
-            height={28}
-            width={28}
-            alt="close arrow"
-            role="login-form-chevron"
-          />
+          <Image src={chevronRight} height={28} width={28} alt="close arrow" />
         </button>
 
         <h3>
@@ -95,7 +88,6 @@ export default function Login({ showAuthForm, closeAuthForm }) {
             className={`btn btn-login ${!isLogin ? "btn-grey" : ""}`}
             onClick={toggleAuthType}
             disabled={isLogin}
-            role="login-form-btn-login"
           >
             Login
           </button>
@@ -105,7 +97,6 @@ export default function Login({ showAuthForm, closeAuthForm }) {
             className={`btn btn-signup ${isLogin ? "btn-grey" : ""}`}
             onClick={toggleAuthType}
             disabled={!isLogin}
-            role="login-form-btn-join"
           >
             Join the club
           </button>
@@ -119,18 +110,18 @@ export default function Login({ showAuthForm, closeAuthForm }) {
           />
         )}
         <FormRow
-          label="Email"
+          label="email"
           id="email"
           onChange={handleChange}
           value={email}
         />
         <FormRow
-          label="Password"
+          label="password"
           id="password"
           onChange={handleChange}
           value={password}
         />
-        <button className="btn btn-auth-submit" role="login-form-btn-submit">
+        <button className="btn btn-auth-submit">
           {isLogin ? "login" : "register"}
         </button>
         <p>

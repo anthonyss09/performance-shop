@@ -20,11 +20,8 @@ export default function LogoLight({ shiftRight, closeMenu, closeAuthForm }) {
         width={28}
         height={32}
         className="performance-icon"
-        role="logo-performance-icon"
       />
-      <h3 className="logo-text-white" role="logo-text">
-        Performance
-      </h3>
+      <p className="logo-text-white">Performance</p>
     </Link>
   );
 }

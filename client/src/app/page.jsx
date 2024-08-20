@@ -24,7 +24,7 @@ const HomePage = React.memo(function HomePage() {
   const loading = <p>loading</p>;
 
   return (
-    <div className={styles.main} role="home-page-main">
+    <div className={styles.main}>
       <HeaderImagesHome />
       <p id="homepage-slogan" className={styles.slogan}>
         Get out & play.
@@ -37,7 +37,6 @@ const HomePage = React.memo(function HomePage() {
             <Link
               href="/products/single-product"
               className={`link ${styles.linkBuyNow}`}
-              role="home-page-link-buy"
             >
               Buy Now
             </Link>
@@ -52,22 +51,17 @@ const HomePage = React.memo(function HomePage() {
               alt="sneaker one"
               priority
               fill
-              role="home-page-image-sneaker"
               className={styles.sneakerImage}
             />
           </div>
           <div className={styles.about}>
-            <p role="home-page-about-p">
+            <p>
               Performance Generation 1 is the athletic sneaker that performs
               under any circusmstance. We’ve had elite professionals across
               multiple disciplines put this shoe to the test and now we bring to
               you the generation one.
             </p>
-            <Link
-              href="/about"
-              className={`link ${styles.linkLearn}`}
-              role="home-page-link-about"
-            >
+            <Link href="/about" className={`link ${styles.linkLearn}`}>
               About the tech...
             </Link>
           </div>

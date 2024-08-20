@@ -45,24 +45,15 @@ export default function ContactPage() {
         <h1>Contact Us!</h1>
       </header>{" "}
       <main className={styles.main}>
-        <form
-          className={styles.form}
-          role="contact-form"
-          onSubmit={handleSubmit}
-        >
-          <div className={`form-row ${styles.formRow}`} role="div">
-            <label
-              className={`form-label ${styles.formLabel}`}
-              htmlFor="Email"
-              role="label"
-            >
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={`form-row ${styles.formRow}`}>
+            <label className={`form-label ${styles.formLabel}`} htmlFor="Email">
               Email
             </label>
             <input
               className={`form-input ${styles.formInput} ${styles.formInputShort}`}
               type="text"
               id="email"
-              role="contact-form-input"
               onChange={handleChange}
               value={email}
             />
@@ -72,7 +63,7 @@ export default function ContactPage() {
             {" "}
             <label
               className={`form-label ${styles.formLabel}`}
-              htmlFor="Message"
+              htmlFor="message"
             >
               Message:
             </label>
@@ -81,15 +72,12 @@ export default function ContactPage() {
               name="message"
               rows="8"
               className={` ${styles.formInput}`}
-              role="contact-form-textarea"
               onChange={handleChange}
               value={message}
             ></textarea>
           </div>
 
-          <button className={`btn ${styles.btn}`} role="contact-form-btn">
-            Send
-          </button>
+          <button className={`btn ${styles.btn}`}>Send</button>
         </form>
       </main>
     </div>
