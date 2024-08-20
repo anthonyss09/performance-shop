@@ -53,6 +53,7 @@ const HomePage = React.memo(function HomePage() {
               priority
               fill
               role="home-page-image-sneaker"
+              className={styles.sneakerImage}
             />
           </div>
           <div className={styles.about}>

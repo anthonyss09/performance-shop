@@ -31,6 +31,7 @@
 .linkLearn {
   width: 300px;
   margin: 0 auto;
+  /* margin-bottom: 3rem; */
   font-weight: 500;
   color: white;
 }
@@ -42,7 +43,8 @@
 }
 
 .section {
-  height: 90vh;
+  /* height: 90vh; */
+  height: 650px;
   background: black;
   display: flex;
   flex-direction: column;
@@ -65,15 +67,18 @@
   letter-spacing: 0.02rem;
 }
 
+.sneakerImage {
+  object-fit: cover;
+}
+
 .sneakerImageContainer {
   height: 260px;
-  width: 380px;
+  width: 390px;
   position: relative;
   display: grid;
   place-items: center;
   background: black;
   color: white;
-  object-fit: cover;
 }
 
 .sneakerSelect {
@@ -114,8 +119,8 @@
   }
   .section {
     margin-top: -370.5px;
+    margin-top: -364px;
     /* margin-top: -397px; */
-    height: 100vh;
   }
   .slogan {
     color: rgb(252, 252, 252, 0.8);
@@ -128,7 +133,7 @@
     left: 32vw;
   }
   .sneakerImageContainer {
-    height: 330px;
+    height: 322px;
     width: 480px;
     margin-left: 7rem;
     z-index: 6;
