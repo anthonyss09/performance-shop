@@ -1,16 +1,11 @@
 "use client";
-import { useAppSelector, useAppDispatch } from "../../../lib/hooks";
+import { useAppSelector } from "../../../lib/hooks";
 import { useEffect } from "react";
-import {
-  setCartId,
-  useGetCartQuery,
-} from "../../../lib/features/cart/cartSlice";
+import { useGetCartQuery } from "../../../lib/features/cart/cartSlice";
 import {
   selectAuthenticationData,
   useLoginCustomerQuery,
 } from "../../../lib/features/authentication/authenticationSlice";
-import { getRedisCustomer } from "../../../services/redis";
-// import loginShopifyCustomer from "../../../utils/helpers/login";
 import { useState } from "react";
 import Alert from "../Alert";
 import { selectAlertsData } from "../../../lib/features/alerts/alertsSlice";
@@ -30,8 +25,6 @@ export default function Navbar() {
 
   const pathName = usePathname();
 
-  const dispatch = useAppDispatch();
-
   const {
     data: shopifyCartData,
     isLoading: cartDataLoading,
@@ -48,31 +41,7 @@ export default function Navbar() {
     error: authenticationError,
   } = useLoginCustomerQuery(customerAccessToken);
 
-  if (cartDataSuccess) {
-    // console.log("success you have a cart");
-    // console.log(shopifyCartData);
-  } else if (cartDataError) {
-    // console.log("your cart retrieval threw an error", cartError);
-  }
-  if (authenticationSuccess) {
-    // console.log("auth data", authenticationData);
-    // console.log(customerAccessToken);
-    if (authenticationData.customer !== null) {
-    }
-  } else if (authenticationIsError) {
-    // console.log("authentication error", console.log(authenticationError));
-  }
-
   useEffect(() => {
-    // async function getRedisData() {
-    //   const res = await loginShopifyCustomer(customerAccessToken);
-    //   if (res.customer !== null) {
-    //     const redisCustomer = await getRedisCustomer(res.customer.id);
-    //     dispatch(setCartId(redisCustomer.cartId));
-    //   }
-    // }
-    // getRedisData();
-
     window.addEventListener("resize", resizeCB);
     return () => {
       window.removeEventListener("resize", resizeCB);
