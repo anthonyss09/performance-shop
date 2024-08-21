@@ -1,10 +1,23 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/Footer";
+import { Inter, Kolker_Brush } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+export const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+export const kolker = Kolker_Brush({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-kolker",
+  weight: "400",
+});
+
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${kolker.variable}`}>
       <StoreProvider>
         <body>
           <Navbar />
