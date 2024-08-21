@@ -175,13 +175,13 @@ button:hover {
   width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.6rem;
   /* gap: 1rem; */
 }
 
 .footer-main {
-  height: 280px;
-  height: 240px;
+  height: 250px;
+  /* height: 240px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -262,6 +262,7 @@ button:hover {
   /* color: rgb(123, 167, 215); */
   letter-spacing: 0.05rem;
   font-weight: 500;
+  font-size: 12px;
 }
 
 .link-homepage-learn {
@@ -447,30 +448,29 @@ button:hover {
 
 @media only screen and (min-width: 500px) {
   .link-footer {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 10px;
     color: rgb(0, 0, 0, 0.7);
+    padding: 0.6rem;
   }
   .logo-footer-text {
     font-size: 26px;
   }
-  .logo-nav-shift-right {
-    /* margin-left: 50vw; */
-  }
-  /* .footer-links {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-  } */
 
   .footer-links {
-    gap: 0;
+    width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     margin-left: 1rem;
+    gap: 0;
   }
+  /* .footer-logo-container {
+    position: absolute;
+    bottom: 0.2rem;
+  } */
   .footer-main {
     /* height: 300px; */
+    height: 120px;
     padding: 1rem;
     background: rgb(240, 240, 240);
   }
@@ -482,10 +482,13 @@ button:hover {
 }
 
 @media only screen and (min-width: 700px) {
-  .performance-icon-black {
+  .link-footer {
+    font-size: 12px;
+  }
+  /* .performance-icon-black {
     display: none;
   }
   .performance-icon-white {
     display: block;
-  }
+  } */
 }

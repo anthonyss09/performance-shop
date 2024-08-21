@@ -38,11 +38,11 @@ export default function Footer() {
             Contact
           </Link>
         </li>
-        <li className="footer-logo-container">
-          {" "}
-          <LogoFooter />
-        </li>
       </ul>
+      <div className="footer-logo-container">
+        {" "}
+        <LogoFooter />
+      </div>
     </footer>
   );
 }

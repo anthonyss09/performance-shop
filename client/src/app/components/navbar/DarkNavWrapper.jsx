@@ -48,7 +48,7 @@ export default function DarkNavWrapper({
       </ul>
 
       <span>
-        <button className="btn" onClick={toggleAuthForm}>
+        <button className="btn" onClick={toggleAuthForm} title="login">
           {" "}
           <Image
             id="user-icon"
@@ -78,6 +78,7 @@ export default function DarkNavWrapper({
           />
         </Link>
         <button
+          title="menu"
           className={`btn ${styles.btn}`}
           onClick={() => {
             handleMenuClick();
