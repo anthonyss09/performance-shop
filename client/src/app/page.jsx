@@ -42,7 +42,7 @@ const HomePage = React.memo(function HomePage() {
             </Link>
           </div>
 
-          <div
+          <picture
             className={`${styles.imageContainer} ${styles.sneakerImageContainer}`}
           >
             {" "}
@@ -53,7 +53,7 @@ const HomePage = React.memo(function HomePage() {
               fill
               className={styles.sneakerImage}
             />
-          </div>
+          </picture>
           <div className={styles.about}>
             <p>
               Performance Generation 1 is the athletic sneaker that performs

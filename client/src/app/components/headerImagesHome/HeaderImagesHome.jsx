@@ -44,7 +44,7 @@ const HeaderImagesHome = React.memo(function HeaderImagesHome() {
   return (
     <header className={styles.header}>
       {" "}
-      <div
+      <picture
         className={`${styles.imageContainer} ${styles.womanRunnerContainer}`}
       >
         {" "}
@@ -55,46 +55,47 @@ const HeaderImagesHome = React.memo(function HeaderImagesHome() {
           fill
           className={`${styles.womanRunnerImage} ${styles.headerImage}`}
           id="homepage-woman-runner-image"
+          sizes="(min-width:700px) 35%,100vw"
         />
-      </div>
-      <div
+      </picture>
+      <picture
         className={`${styles.imageContainer} ${styles.manDribblingContainer}`}
       >
         {" "}
         <Image
           src={manDribbling}
           alt="man dribbling"
-          priority
           fill
           className={`${styles.headerImage} ${styles.manDribblingImage}`}
           id="homepage-man-dribbling-image"
+          sizes="(min-width:700px) 30%,100vw"
         />
-      </div>
-      <div
+      </picture>
+      <picture
         className={`${styles.imageContainer} ${styles.manRunnerColorContainer}`}
       >
         {" "}
         <Image
           src={manRunnerColor}
           alt="man runner"
-          priority
           fill
           className={`${styles.headerImage} ${styles.manRunnerColorImage}`}
           id="homepage-man-runner-color-image"
+          sizes="(min-width:700px) 35%,100vw"
         />
-      </div>
-      <div
+      </picture>
+      <picture
         className={`${styles.imageContainer} ${styles.manRunnerDarkContainer}`}
       >
         <Image
           src={manRunnerDark}
           alt="man runner"
-          priority
           fill
           className={`${styles.headerImage} ${styles.manRunnerDarkImage}`}
           id="homepage-man-runner-dark-image"
+          sizes="(min-width:700px) 30%,100vw"
         />
-      </div>
+      </picture>
     </header>
   );
 });

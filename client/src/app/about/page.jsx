@@ -18,7 +18,7 @@ export default function AboutPage() {
           <p className={styles.sectionColumnPFirst}>
             Imagine a sneaker that can perform under any athletic circumstance.
           </p>
-          <div className={styles.imageContainer}>
+          <picture className={styles.imageContainer}>
             <Image
               src={sneakerOne}
               fill
@@ -26,14 +26,14 @@ export default function AboutPage() {
               className={styles.image}
               alt="sneaker"
             />
-          </div>
+          </picture>
         </section>
         <section className={styles.sectionColumn}>
           <p className={styles.sectionColumnP}>
             It would take a sneaker engineering team working with cutting edge
             footwear technology.
           </p>
-          <div className={styles.imageContainer}>
+          <picture className={styles.imageContainer}>
             <Image
               src={manRunnerDark}
               fill
@@ -41,14 +41,14 @@ export default function AboutPage() {
               className={styles.image}
               alt="man runner dark"
             />
-          </div>
+          </picture>
         </section>
         <section className={styles.sectionColumn}>
           <p className={styles.sectionColumnP}>
             You&apos;d need your product tested by top level athletes that were
             willing to push the sneaker as hard as they push themselves.
           </p>
-          <div className={styles.imageContainer}>
+          <picture className={styles.imageContainer}>
             <Image
               src={manDribbling}
               fill
@@ -56,13 +56,13 @@ export default function AboutPage() {
               className={styles.image}
               alt="man dribbling"
             />
-          </div>
+          </picture>
         </section>
 
         <section className={styles.sectionRow}>
           <p>If successfull you&apos;d have the performance generation 1.</p>
 
-          <div className={styles.imageContainerSmall}>
+          <picture className={styles.imageContainerSmall}>
             {" "}
             <Image
               src={sneakerOne}
@@ -71,11 +71,11 @@ export default function AboutPage() {
               className={styles.image}
               alt="sneaker"
             />
-          </div>
+          </picture>
         </section>
 
         <section>
-          <div className={styles.imageContainerLarge}>
+          <picture className={styles.imageContainerLarge}>
             <Image
               src={womanRunner}
               fill
@@ -83,7 +83,7 @@ export default function AboutPage() {
               className={styles.image}
               alt="woman runner"
             />
-          </div>
+          </picture>
         </section>
       </main>
     </div>

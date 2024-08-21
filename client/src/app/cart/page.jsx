@@ -62,7 +62,7 @@ export default function CartPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <div className={styles.manRunnerContainer}>
+        <picture className={styles.manRunnerContainer}>
           {" "}
           <Image
             priority={true}
@@ -71,7 +71,7 @@ export default function CartPage() {
             fill
             className={styles.manRunnerImage}
           />
-        </div>
+        </picture>
         <h1>Cart Summary</h1>
       </header>
       <main className={styles.main}>

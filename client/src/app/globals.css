@@ -254,7 +254,6 @@ button:hover {
 
 .link {
   text-decoration: none;
-  color: grey;
   letter-spacing: 0.02rem;
 }
 
@@ -316,6 +315,7 @@ button:hover {
   font-size: 30px;
   /* color: white; */
   color: rgb(190, 190, 190);
+  font-family: var(--font-kolker);
 }
 
 .navbar-cart-count {
