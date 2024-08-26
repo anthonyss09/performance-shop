@@ -1,7 +1,7 @@
 import isEmail from "../helpers/isEmail";
 import { createRedisCustomer, getRedisCustomer } from "../../services/redis";
 import getShopifyCustomer from "../helpers/getShopifyCustomer";
-import { setCartId } from "@/lib/features/cart/cartSlice";
+import { setCartId } from "../../lib/features/cart/cartSlice";
 
 export default async function handleLogin({
   dispatch,

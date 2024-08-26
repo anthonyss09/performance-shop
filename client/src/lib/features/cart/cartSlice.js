@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { apiSlice } from "../api/apiSlice";
 import { createRedisCustomer, getRedisCustomer } from "../../../services/redis";
-import getShopifyCustomer from "@/utils/helpers/getShopifyCustomer";
+import getShopifyCustomer from "../../../utils/helpers/getShopifyCustomer";
 
 var cartId;
 var customerAccessToken;
@@ -145,7 +145,7 @@ const extendedApi = apiSlice.injectEndpoints({
 
     getCart: build.query({
       query: (sessionId) => ({
-        document: `query {
+        document: `query  {
   cart(id:"${sessionId}") {
     id
     createdAt
@@ -193,6 +193,7 @@ const extendedApi = apiSlice.injectEndpoints({
         try {
           const { data: cartData } = await queryFulfilled;
           if (cartData.cart !== null) {
+            console.log(cartData);
             dispatch(setCartData(cartData.cart));
             dispatch(setCartId(cartData.cart.id));
             let cartCount = 0;

@@ -7,7 +7,10 @@ import {
 import { useState } from "react";
 import chevronRight from "../assets/svgs/chevronRight.svg";
 import Image from "next/image";
-import { displayAlert, clearAlert } from "@/lib/features/alerts/alertsSlice";
+import {
+  displayAlert,
+  clearAlert,
+} from "../../lib/features/alerts/alertsSlice";
 import { useDispatch } from "react-redux";
 import Loader from "./loader/Loader";
 import handleLogin from "../../utils/handlers/handleLogin";

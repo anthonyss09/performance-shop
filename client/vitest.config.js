@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: "jsdom",
-    setupFiles: ["vitestSetup.js"],
+    setupFiles: ["vitestSetup.js", "dotenv/config"],
   },
 });

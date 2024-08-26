@@ -58,7 +58,7 @@ export default function SingleProductPage() {
 
   let content;
   if (isLoading) {
-    content = <Loader />;
+    content = <Loader loadingMessage="loading..." />;
   } else if (isError) {
     content = <p>some error</p>;
   } else if (isSuccess) {

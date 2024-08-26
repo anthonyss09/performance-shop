@@ -5,7 +5,7 @@ export default function Loader({ loadingMessage }) {
     <aside className={styles.main}>
       <div>
         {" "}
-        <p>{loadingMessage}</p>
+        <p className={styles.p}>{loadingMessage}</p>
       </div>
     </aside>
   );

@@ -90,7 +90,7 @@
 }
 
 .page {
-  padding-top: 80px;
+  padding-top: 96px;
   background: black;
   display: flex;
   flex-direction: column;
@@ -134,7 +134,8 @@
 @media only screen and (min-width: 700px) {
   .imageContainer {
     min-height: 533.33px;
-    max-width: 800px;
+    min-height: 540px;
+    max-width: 810px;
     position: absolute;
     right: -3rem;
   }

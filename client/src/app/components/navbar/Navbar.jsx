@@ -32,7 +32,6 @@ export default function Navbar() {
     isError: cartDataError,
     error: cartError,
   } = useGetCartQuery(cartId);
-
   const {
     data: authenticationData,
     isLoading: authenticationLoading,

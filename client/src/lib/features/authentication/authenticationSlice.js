@@ -1,6 +1,6 @@
 import { apiSlice } from "../api/apiSlice";
 import { createSlice } from "@reduxjs/toolkit";
-import { getRedisCustomer } from "@/services/redis";
+import { getRedisCustomer } from "../../../services/redis";
 
 let customerAccessToken;
 if (typeof localStorage !== "undefined") {
@@ -127,9 +127,14 @@ const extendeApi = apiSlice.injectEndpoints({
               JSON.stringify(redisCustomer.cartId)
             );
           } else if (authData.customer === null) {
-            localStorage.remove("performanceCustomerAccessToken");
+            console.log("authData.customer", authData.customer);
+            if (localStorage.getItem("performanceCustomerAccessToken")) {
+              localStorage.remove("performanceCustomerAccessToken");
+            }
           }
-        } catch (error) {}
+        } catch (error) {
+          console.log(error);
+        }
       },
       providesTags: ["Customer"],
       invalidatesTags: ["Cart"],
