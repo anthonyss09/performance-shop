@@ -25,6 +25,8 @@ export default function SingleProductPage() {
   const dispatch = useAppDispatch();
   const btnActiveId = useRef(null);
 
+  console.log(data);
+
   const [createShopifyCart] = useCreateCartMutation();
   const [updateCartLine] = useUpdateCartLineMutation();
   const [addCartLine] = useCartLinesAddMutation();

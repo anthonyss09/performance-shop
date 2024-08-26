@@ -5,7 +5,7 @@ import { setupServer } from "msw/node";
 import { screen, waitFor } from "@testing-library/react";
 // We're using our own custom render function and not RTL's render.
 import { renderWithProviders } from "../src/utils/test-utils";
-import Navbar from "../src/app/components/navbar/Navbar";
+import SinglePage from "../src/app/products/single-product/page";
 
 export const handlers = [
   http.post(
@@ -15,25 +15,13 @@ export const handlers = [
       // const { cartCount, cartId } = useAppSelector((state) => state.cart);
       return HttpResponse.json({
         data: {
-          cart: {
-            lines: {
-              edges: [
-                {
-                  node: {
-                    attributes: [
-                      { key: "title", value: "test" },
-                      { key: "variantTitle", value: "testVariantTitle" },
-                      { key: "imageUrl", value: {} },
-                    ],
-                    id: "",
-                    merchandise: { id: "" },
-                    quantity: 10,
-                  },
-                },
-              ],
-            },
+          product: {
+            description: "",
+            featuredImage: { url: "" },
+            id: "",
+            title: "",
+            variants: { edges: [{ node: { id: "", title: "test" } }] },
           },
-          customer: null,
         },
       });
     }
@@ -52,9 +40,9 @@ afterEach(() => server.resetHandlers());
 afterEach(() => server.close());
 
 test("graphql client returns data and component renders data", async () => {
-  renderWithProviders(<Navbar />);
+  renderWithProviders(<SinglePage />);
   await waitFor(() => {
-    const cartCount = screen.getByText(10);
-    expect(cartCount).toBeDefined();
+    const variantBtnTest = screen.getByText("test");
+    expect(variantBtnTest).toBeDefined();
   });
 });

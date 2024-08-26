@@ -19,6 +19,9 @@ export default function CartPage() {
   const [updateCartLine] = useUpdateCartLineMutation();
   const lines = cart.cartData ? cart.cartData.lines : null;
   console.log(cart);
+  const subTotalAmount = cart.cartData
+    ? cart.cartData.cost.subtotalAmount.amount
+    : 0;
 
   // const dispatch = useAppDispatch();
   const router = useRouter();
@@ -78,7 +81,9 @@ export default function CartPage() {
         <div>
           <header className={styles.subHeader}>
             <h2 className={styles.title}>Your Cart</h2>
-            <p>Items {cart.cartCount} / Subtotal $189</p>
+            <p>
+              Items {cart.cartCount} / Subtotal ${subTotalAmount}
+            </p>
           </header>
           {itemList}
         </div>
@@ -88,11 +93,11 @@ export default function CartPage() {
             <h3>Order Summary</h3>
             <span>
               <p>SubTotal</p>
-              <p className={styles.amount}>$189</p>
+              <p className={styles.amount}>${subTotalAmount}</p>
             </span>
             <span>
               <p>Sales Tax</p>
-              <p className={styles.amount}>$20</p>
+              <p className={styles.amount}>$0</p>
             </span>
             <span>
               <p>Delivery</p>
@@ -100,7 +105,9 @@ export default function CartPage() {
             </span>
             <span className={styles.total}>
               <p>Total</p>
-              <p className={styles.amount}>$209</p>
+              <span className={styles.amount}>
+                $<p>{subTotalAmount}</p>
+              </span>
             </span>
           </div>
           <footer className={styles.footer}>

@@ -5,6 +5,7 @@ import { setupServer } from "msw/node";
 import { screen, waitFor } from "@testing-library/react";
 // We're using our own custom render function and not RTL's render.
 import { renderWithProviders } from "../src/utils/test-utils";
+import CartPage from "../src/app/cart/page";
 import Navbar from "../src/app/components/navbar/Navbar";
 
 export const handlers = [
@@ -16,12 +17,16 @@ export const handlers = [
       return HttpResponse.json({
         data: {
           cart: {
+            cost: {
+              totalAmount: {},
+              subtotalAmount: { amount: "100", currencyCode: "USD" },
+            },
             lines: {
               edges: [
                 {
                   node: {
                     attributes: [
-                      { key: "title", value: "test" },
+                      { key: "testTitle", value: "test" },
                       { key: "variantTitle", value: "testVariantTitle" },
                       { key: "imageUrl", value: {} },
                     ],
@@ -52,9 +57,14 @@ afterEach(() => server.resetHandlers());
 afterEach(() => server.close());
 
 test("graphql client returns data and component renders data", async () => {
-  renderWithProviders(<Navbar />);
+  renderWithProviders(
+    <>
+      <Navbar />
+      <CartPage />
+    </>
+  );
   await waitFor(() => {
-    const cartCount = screen.getByText(10);
-    expect(cartCount).toBeDefined();
+    const subtotalAmountTest = screen.getByText("100");
+    expect(subtotalAmountTest).toBeDefined();
   });
 });
