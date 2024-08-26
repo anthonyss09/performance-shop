@@ -1,20 +1,22 @@
 import { Redis } from "@upstash/redis";
 
-const redis = new Redis({
-  url: "https://amazed-cow-55735.upstash.io",
-  token: "Adm3AAIncDFiMDFiNTE3ZDk5M2Q0MTI1ODkwYWU1YzYzNmViYzk1NHAxNTU3MzU",
-});
-
 export async function createRedisCustomer({ customerId, cartId = null }) {
+  const redis = new Redis({
+    url: `${process.env.NEXT_PUBLIC_REDIS_URL}`,
+    token: `${process.env.NEXT_PUBLIC_REDIS_TOKEN}`,
+  });
   const newRedisCustomer = await redis.set(customerId, { customerId, cartId });
 
   return newRedisCustomer;
 }
 
 export async function getRedisCustomer(customerId) {
+  const redis = new Redis({
+    url: `${process.env.NEXT_PUBLIC_REDIS_URL}`,
+    token: `${process.env.NEXT_PUBLIC_REDIS_TOKEN}`,
+  });
   try {
     var redisData = await redis.get(customerId);
-    // console.log("redis data is", redisData);
   } catch (error) {
     console.log("error fetching redis data", error);
   }

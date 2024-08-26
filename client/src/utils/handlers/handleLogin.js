@@ -63,6 +63,7 @@ export default async function handleLogin({
         email: email,
         password: password,
       });
+      console.log("response", response);
       const customerAccessTokenData = response.data.customerAccessTokenCreate;
 
       if (customerAccessTokenData.customerAccessToken === null) {

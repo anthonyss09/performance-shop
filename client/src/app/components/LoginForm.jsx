@@ -22,8 +22,8 @@ export default function Login({ showAuthForm, closeAuthForm }) {
 
   const [loading, setLoading] = useState(false);
   const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@gmail.com");
+  const [password, setPassword] = useState("123456");
 
   const dispatch = useDispatch();
 
