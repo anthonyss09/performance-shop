@@ -39,6 +39,7 @@ async function handleContactMessage(
     }
     setShowLoader(false);
     dispatch(displayAlert({ alertMessage: "Email sent!" }));
+    console.log("sent alert");
     setEmail("");
     setMessage("");
   } catch (error) {

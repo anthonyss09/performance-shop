@@ -3,17 +3,19 @@ import { afterEach, beforeEach, expect, test } from "vitest";
 import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 import { screen, waitFor, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
 // We're using our own custom render function and not RTL's render.
 import { renderWithProviders } from "../src/utils/test-utils";
+import ContactPage from "../src/app/contact/page";
 import Navbar from "../src/app/components/navbar/Navbar";
-import LoginForm from "../src/app/components/LoginForm";
 
 export const handlers = [
   http.post(
     `https://${process.env.NEXT_PUBLIC_SHOP_NAME}.myshopify.com/api/${process.env.NEXT_PUBLIC_VERSION}/graphql.json`,
     () => {
       console.log("query intercepted");
-
+      // const { cartCount, cartId } = useAppSelector((state) => state.cart);
       return HttpResponse.json({
         data: {
           cart: {
@@ -34,16 +36,14 @@ export const handlers = [
               ],
             },
           },
-          customer: { id: `${process.env.NEXT_PUBLIC_TEST_CUSTOMER_ID}` },
-          customerAccessTokenCreate: { customerAccessToken: "testToken" },
+          customer: null,
         },
       });
     }
   ),
-
-  http.post(`${process.env.NEXT_PUBLIC_REDIS_URL}`, () => {
-    console.log("intercepted redis query");
-    return HttpResponse.json({ result: JSON.stringify({ cartId: "testId" }) });
+  http.post("/api/contact", () => {
+    console.log("intercepted  contact query");
+    return HttpResponse.json({ response: { ok: true } });
   }),
 ];
 
@@ -62,17 +62,22 @@ test("graphql client returns data and component renders data", async () => {
   renderWithProviders(
     <>
       <Navbar />
-      <LoginForm />
+      <ContactPage />
     </>
   );
-  const email = screen.getByLabelText("email");
-  const password = screen.getByLabelText("password");
-  fireEvent.change(email, { target: { value: "test@gmail.com" } });
-  fireEvent.change(password, { target: { value: "123456" } });
-  fireEvent.click(screen.getAllByText("login")[0]);
+  const email = screen.getByLabelText("Email");
+  const message = screen.getByLabelText("Message:");
+
+  fireEvent.change(email, {
+    target: { id: "email", value: "tesgmai" },
+  });
+  fireEvent.change(message, {
+    target: { id: "message", value: "test message" },
+  });
+  fireEvent.click(screen.getByText("Send"));
 
   await waitFor(() => {
-    const alertP = screen.getByText("Welcome back!");
+    const alertP = screen.getByText("Please provide a valid email.");
     expect(alertP).toBeDefined();
   });
 });

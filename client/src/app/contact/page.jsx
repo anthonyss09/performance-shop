@@ -3,7 +3,10 @@ import styles from "./page.module.css";
 import isEmail from "../../utils/helpers/isEmail";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { displayAlert, clearAlert } from "@/lib/features/alerts/alertsSlice";
+import {
+  displayAlert,
+  clearAlert,
+} from "../../lib/features/alerts/alertsSlice";
 import Loader from "../components/loader/Loader";
 import handleContactMessage from "../../utils/handlers/handleContactMessage";
 
@@ -15,8 +18,8 @@ export default function ContactPage() {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
-    refs[e.target.id].current = e.target.value;
+    // const { id, value } = e.target;
+    console.log("in the change", e.target.value);
     if (e.target.id === "email") {
       setEmail(e.target.value);
     } else if (e.target.id === "message") {
@@ -47,15 +50,15 @@ export default function ContactPage() {
       <main className={styles.main}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={`form-row ${styles.formRow}`}>
-            <label className={`form-label ${styles.formLabel}`} htmlFor="Email">
+            <label className={`form-label ${styles.formLabel}`} htmlFor="email">
               Email
             </label>
             <input
               className={`form-input ${styles.formInput} ${styles.formInputShort}`}
-              type="text"
               id="email"
               onChange={handleChange}
               value={email}
+              type="text"
             />
           </div>
 
