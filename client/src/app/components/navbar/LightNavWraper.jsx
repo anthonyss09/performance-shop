@@ -47,7 +47,11 @@ export default function LightNavWrapper({
         </li>
       </ul>
       <span>
-        <button className="btn" onClick={toggleAuthForm} title="login">
+        <button
+          className={`btn ${styles.btn}`}
+          onClick={toggleAuthForm}
+          title="login"
+        >
           {" "}
           <Image
             id="user-icon"

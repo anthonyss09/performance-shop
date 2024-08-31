@@ -138,6 +138,7 @@
     max-width: 810px;
     position: absolute;
     right: -3rem;
+    bottom: 0;
   }
 
   .options {

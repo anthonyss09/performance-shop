@@ -48,7 +48,11 @@ export default function DarkNavWrapper({
       </ul>
 
       <span>
-        <button className="btn" onClick={toggleAuthForm} title="login">
+        <button
+          className={`${styles.btn} btn`}
+          onClick={toggleAuthForm}
+          title="login"
+        >
           {" "}
           <Image
             id="user-icon"

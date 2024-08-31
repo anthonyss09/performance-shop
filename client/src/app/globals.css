@@ -25,6 +25,13 @@ input {
   padding: 0.6rem;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 textarea {
   padding: 0.6rem;
 }
@@ -74,7 +81,7 @@ button:hover {
 }
 
 .btn {
-  background: none;
+  /* background: none; */
   border: none;
 }
 
@@ -98,11 +105,13 @@ button:hover {
 
 .btn-form-chevron {
   align-self: flex-start;
+  background: none;
 }
 
 .btn-login {
   font-size: 24px;
   letter-spacing: 0.02rem;
+  background: none;
 }
 
 .btn-login:disabled {
@@ -113,6 +122,7 @@ button:hover {
   font-size: 24px;
   font-size: 18px;
   letter-spacing: 0.02rem;
+  background: none;
 }
 
 .btn-signup:disabled {
@@ -175,12 +185,12 @@ button:hover {
   width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  /* gap: 0.6rem; */
   /* gap: 1rem; */
 }
 
 .footer-main {
-  height: 250px;
+  /* height: 250px; */
   /* height: 240px; */
   display: flex;
   flex-direction: column;
@@ -189,6 +199,7 @@ button:hover {
   padding-left: 1rem;
   background: #f5eeee;
   background: rgb(250, 250, 250);
+  gap: 1rem;
 }
 
 .form {
@@ -234,7 +245,7 @@ button:hover {
   width: 250px;
   border-radius: 1rem;
   border: 2px solid rgb(80, 80, 80);
-  background: none;
+  /* background: none; */
 }
 
 .form-label {
@@ -293,7 +304,7 @@ button:hover {
 }
 
 .logo-footer {
-  margin: 0.6rem 0;
+  /* margin: 0.6rem 0; */
   margin-left: -0.2rem;
 }
 

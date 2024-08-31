@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <body>
           <Navbar />
           <div className="children">{children}</div>
-          <div className="spacer"></div>
+          {/* <div className="spacer"></div> */}
           <Footer />
         </body>
       </StoreProvider>
