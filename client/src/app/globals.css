@@ -82,7 +82,7 @@ button:hover {
 
 .btn {
   /* background: none; */
-  border: none;
+  /* border: none; */
 }
 
 .btn-auth-submit {
@@ -106,12 +106,14 @@ button:hover {
 .btn-form-chevron {
   align-self: flex-start;
   background: none;
+  border: none;
 }
 
 .btn-login {
   font-size: 24px;
   letter-spacing: 0.02rem;
   background: none;
+  border: none;
 }
 
 .btn-login:disabled {
@@ -123,6 +125,7 @@ button:hover {
   font-size: 18px;
   letter-spacing: 0.02rem;
   background: none;
+  border: none;
 }
 
 .btn-signup:disabled {
