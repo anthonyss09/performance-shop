@@ -55,18 +55,22 @@ button:hover {
 
 .alert-box {
   background: white;
+  background: rgb(0, 0, 0, 0.4);
   min-height: 60px;
   min-width: 200px;
   padding: 1rem 2rem;
   display: grid;
   place-items: center;
   border: 1px solid lightGrey;
-  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  /* box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5); */
 }
 
-.alert-box p {
+.alert-box-p {
   font-weight: 600;
   letter-spacing: 0.02rem;
+  color: white;
 }
 
 .alert-page {
@@ -78,11 +82,6 @@ button:hover {
   display: grid;
   place-items: center;
   z-index: 250;
-}
-
-.btn {
-  /* background: none; */
-  /* border: none; */
 }
 
 .btn-auth-submit {

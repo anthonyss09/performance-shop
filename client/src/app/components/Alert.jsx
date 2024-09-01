@@ -3,7 +3,7 @@ export default function Alert({ message }) {
     <div className="alert-page">
       <div className="alert-box">
         {" "}
-        <p>{message}</p>
+        <p className="alert-box-p">{message}</p>
       </div>
     </div>
   );
