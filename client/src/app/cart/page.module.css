@@ -136,6 +136,7 @@
   top: 0;
   background: black;
   padding-top: 80px;
+  overflow: hidden;
 }
 
 .orderDetails {
