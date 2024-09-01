@@ -194,7 +194,7 @@ button:hover {
 
 .footer-main {
   /* height: 250px; */
-  /* height: 240px; */
+  height: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
