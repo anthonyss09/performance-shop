@@ -1,6 +1,6 @@
 "use client";
 import womanRunner from "/public/assets/images/womanRunner.jpeg";
-import manDribbling from "/public/assets/images/manDribbling.jpeg";
+import manDribbling from "/public/assets/images/manDribbling2.jpeg";
 import manRunnerColor from "/public/assets/images/manRunnerColor.jpeg";
 import manRunnerDark from "/public/assets/images/manRunnerDark.jpeg";
 import Image from "next/image";

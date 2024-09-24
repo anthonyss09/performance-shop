@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import sneakerOne from "../../../public/assets/images/sneakerOne.jpeg";
-import manDribbling from "../../../public/assets/images/manDribbling.jpeg";
+import manDribbling from "../../../public/assets/images/manDribbling2.jpeg";
 import manRunnerDark from "../../../public/assets/images/manRunnerDark.jpeg";
 import womanRunner from "../../../public/assets/images/womanRunner.jpeg";
 
